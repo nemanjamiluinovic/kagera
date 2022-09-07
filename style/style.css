@@ -1,0 +1,198 @@
+
+#sampleTable{
+    background-color: rgb(208, 230, 255);
+    margin: 15px auto;
+    padding: 2%;
+    border-radius: 20px;
+    width: 80%;
+    border-spacing: 0px;
+}
+
+#sampleTable thead tr td{
+  border-bottom: 1px solid black;
+  font-size: 26px;
+
+}
+
+#sampleTable tbody tr td{
+  border-bottom: 1px solid black;
+
+}
+
+#sampleTable tfoot tr td{
+  border-top: 1px solid black;
+  text-align: center;
+}
+
+tr:nth-child(even) {
+  background-color: rgb(225, 240, 265);;
+}
+
+#add{
+  margin-top: 50px;
+  margin-left: 10%;
+}
+
+.button {
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  background-color: white; 
+  color: black; 
+  border: 2px solid #26892f;
+  border-radius: 10px;
+}
+
+.button:hover {
+  background-color: #00ba3b;
+  color: white;
+}
+
+
+.button2 {
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  background-color: white; 
+  color: black; 
+  border: 2px solid #008CBA;
+  border-radius: 10px;
+}
+
+.button2:hover {
+  background-color: #008CBA;
+  color: white;
+}
+
+.button3 {
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  background-color: white; 
+  color: black; 
+  border: 2px solid #cc0000;;
+  border-radius: 10px;
+}
+
+.button3:hover {
+  background-color: #bd0303;
+  color: white;
+}
+
+
+.loginPopup {
+    position: relative;
+    text-align: center;
+    width: 100%;
+  }
+  .formPopup {
+    display: none;
+    position: fixed;
+    left: 45%;
+    top: 3%;
+    transform: translate(-50%, 5%);
+    z-index: 9;
+  }
+  .formContainer {
+    width: 85%;
+    padding: 100px;
+    background-color: #fff;
+  }
+  .formContainer input[type=text],
+  .formContainer input[type=textarea] {
+    width: 80%;
+    padding: 15px;
+    margin: 5px 0 20px 0;
+    border: none;
+    background: #eee;
+  }
+  .formContainer input[type=textarea] {
+    height: 4em;
+  }
+  .formContainer input[type=text]:focus,
+  .formContainer input[type=textarea]:focus {
+    background-color: rgb(246, 243, 243);
+    outline: none;
+  }
+  .formContainer .btn {
+    padding: 12px 20px;
+    border: none;
+    background-color: #8ebf42;
+    color: #fff;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 15px;
+    opacity: 0.8;
+    border-radius: 10px;
+  }
+  .formContainer .cancel {
+    background-color: #cc0000;
+    border-radius: 10px;
+  }
+  .formContainer .btn:hover,
+  .openButton:hover {
+    opacity: 1;
+  }
+
+#user{
+  margin: 60px auto;
+  width: 35%;
+}
+
+#user input[type=text] {
+  width: 65%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+#user input[type=radio] {
+  width: 3%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+#user input[type=text]:focus{
+  background-color: #ddd;
+  outline: none;
+}
+
+#user select {
+  width: 50%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+#detail{
+  background-color:#d0e6ff;
+  margin: 60px auto;
+  padding: 30px;
+  width: 50%;
+  text-align: center;
+}
+#detail span{
+  padding: 10px;
+  margin: 5px;
+}
