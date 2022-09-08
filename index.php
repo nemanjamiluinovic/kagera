@@ -10,12 +10,12 @@
     <title>Kagera</title>
 
     <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+    <?php require_once 'actions/router.php'; ?>
 
     <script type="text/javascript" src="js/jQuery.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
     <script type="text/javascript" src="js/fancyTable.js"></script>
-</head>
-<body>
-    <?php require_once 'actions/router.php'; ?>
 </body>
 </html>
