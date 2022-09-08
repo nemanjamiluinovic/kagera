@@ -47,30 +47,29 @@ class User {
     
     function print_in_table(){
         echo "<tr><td>";
-        echo $this->f_name;
+        echo htmlspecialchars($this->f_name);
         echo "</td>";
         echo "<td>";
-        echo $this->l_name;
+        echo htmlspecialchars($this->l_name);
         echo "</td>";
         echo "<td>";
-        echo $this->position;
+        echo htmlspecialchars($this->position);
         echo "</td>";
         echo "<td>";
-        echo $this->type;
+        echo htmlspecialchars($this->type);
         echo "</td>";
         echo "<td>";
         echo "<form action='user_details.php' method='post'>";
-        echo "<input type='hidden' name='f_name' value='$this->f_name'>";
-        echo "<input type='hidden' name='l_name' value='$this->l_name'>"; 
-        echo "<input type='hidden' name='position' value='$this->position'>";
-        echo "<input type='hidden' name='type' value='$this->type'>";
-        echo "<input type='hidden' name='gender' value='$this->gender'>"; 
-        echo "<input type='hidden' name='picture' value='$this->picture'>"; 
-        echo "<input type='hidden' name='cv' value='$this->cv'>";
-        echo "<input type='hidden' name='id' value='$this->id'>";
+        echo "<input type='hidden' name='f_name' value='" . htmlspecialchars($this->f_name) ."'>";
+        echo "<input type='hidden' name='l_name' value='" . htmlspecialchars($this->l_name) ."'>"; 
+        echo "<input type='hidden' name='position' value='" . htmlspecialchars($this->position) ."'>";
+        echo "<input type='hidden' name='type' value='" . htmlspecialchars($this->type) ."'>";
+        echo "<input type='hidden' name='gender' value='" . htmlspecialchars($this->gender) ."'>"; 
+        echo "<input type='hidden' name='picture' value='" . htmlspecialchars($this->picture) ."'>"; 
+        echo "<input type='hidden' name='cv' value='" . htmlspecialchars($this->cv) ."'>";
+        echo "<input type='hidden' name='id' value='" . htmlspecialchars($this->id) ."'>";
         echo "<input class='button2' type='submit' value='details'></form>";
         echo "</td>";
         echo "</tr>";
     }
-
 }

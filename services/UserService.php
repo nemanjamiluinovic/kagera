@@ -43,8 +43,8 @@ class UserService extends BaseService {
             return false;
         }
 
-        $img = $imgFileArray['name'];
-        $cv = $cvFileArray['name'];
+        $img = htmlspecialchars($imgFileArray['name']);
+        $cv = htmlspecialchars($cvFileArray['name']);
 
         $sql = "
         INSERT INTO user (first_name, last_name, position_id, gender, picture_path, cv_path)

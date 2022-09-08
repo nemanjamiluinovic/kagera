@@ -10,17 +10,14 @@
 <body>
     <div id="detail">
     <?php
-    echo '<span>First name: </span>'.$_POST["f_name"];
-    echo '</br><span>Last name: </span>'.$_POST["l_name"];
-    echo '</br><span>position: </span>'.$_POST["position"].'';
-    echo '</br><span>type: </span>'.$_POST["type"];
-    echo '</br><span>gender: </span>'.$_POST["gender"];
+    echo '<span>First name: </span>'.htmlspecialchars($_POST["f_name"]);
+    echo '</br><span>Last name: </span>'.htmlspecialchars($_POST["l_name"]);
+    echo '</br><span>position: </span>'.htmlspecialchars($_POST["position"]);
+    echo '</br><span>type: </span>'.htmlspecialchars($_POST["type"]);
+    echo '</br><span>gender: </span>'.htmlspecialchars($_POST["gender"]);
 
-    $img = "window.open('users/picture/".$_POST['id']."+".$_POST['picture']."');";
-    $cv = "window.open('users/cv/".$_POST['id']."+".$_POST['cv']."');";
-
-    
-    
+    $img = "window.open('users/picture/".htmlspecialchars($_POST['id'])."+".htmlspecialchars($_POST['picture'])."');";
+    $cv = "window.open('users/cv/".htmlspecialchars($_POST['id'])."+".htmlspecialchars($_POST['cv'])."');";
 ?>
     </br><button class="button2" onClick="<?php echo $img ?>">
         <span class="icon">Open picture</span>

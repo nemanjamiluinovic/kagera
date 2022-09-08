@@ -26,7 +26,7 @@
             <?php
             $positions = $positionService->getAll();
             foreach ($positions as $row) {
-                echo "<option value='".$row['position_id']."'>".$row['position']."</option>";
+                echo "<option value='".htmlspecialchars($row['position_id'])."'>".htmlspecialchars($row['position'])."</option>";
             };
             ?>
             <option value="add">add new position</option>
