@@ -1,9 +1,9 @@
 <?php
-if (!defined('ALLOW_ENTRY')) die('Access denied!');
+	if (!defined('ALLOW_ENTRY')) die('Access denied!');
 
-$mysqli = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+	$mysqli = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
-if ($mysqli -> connect_errno) {
-  echo "Failed to connect to MySQL: " . $mysqli -> connect_error;
-  exit();
-}
+	if ($mysqli -> connect_errno) {
+		echo "Failed to connect to MySQL: " . $mysqli -> connect_error;
+		exit();
+	}

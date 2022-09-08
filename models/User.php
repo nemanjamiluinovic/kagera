@@ -24,24 +24,31 @@ class User {
     function get_id(){
         return $this->id;
     }
+
     function get_f_name(){
         return $this->f_name;
     }
+
     function get_l_name(){
         return $this->l_name;
     }
+
     function get_position(){
         return $this->position;
     }
+
     function get_type(){
         return $this->type;
     }
+
     function get_gender(){
         return $this->gender;
     }
+
     function get_picture(){
         return $this->picture;
     }
+
     function get_cv(){
         return $this->cv;
     }

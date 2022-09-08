@@ -8,13 +8,7 @@ class PositionService extends BaseService {
     public function getAll() {
         $positions = array();
 
-        $sql="
-        SELECT
-        position.position_id,
-        position.position
-        FROM
-        position
-        ";
+        $sql="SELECT position.position_id, position.position FROM position";
 
         $result = $this->db()->query($sql);
 

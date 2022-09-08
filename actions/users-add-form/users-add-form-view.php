@@ -36,17 +36,17 @@
 
 <div class="loginPopup">
     <div class="formPopup" id="popupForm">
-    <form action="?action=positions-add" method="post" class="formContainer">
-        <h2>Add new position</h2>
-        <label for="position">
-        </label>
-        <input type="text" id="pos" placeholder="position name" name="pos" pattern="[a-zA-ZšđčćžŠĐČĆŽ][a-zA-ZšđčćžŠĐČĆŽ ]{2,}" required>
-        <label for="des">
-        </label>
-        <input type="textarea" id="des" placeholder="position description" name="des" pattern="[a-zA-ZšđčćžŠĐČĆŽ][a-zA-ZšđčćžŠĐČĆŽ ]{2,}" required>
-        <button type="submit" class="btn">Add</button>
-        <button type="button" class="btn cancel" onclick="closeForm()">Cancel</button>
-    </form>
+        <form action="?action=positions-add" method="post" class="formContainer">
+            <h2>Add new position</h2>
+            <label for="position">
+            </label>
+            <input type="text" id="pos" placeholder="position name" name="pos" pattern="[a-zA-ZšđčćžŠĐČĆŽ][a-zA-ZšđčćžŠĐČĆŽ ]{2,}" required>
+            <label for="des">
+            </label>
+            <input type="textarea" id="des" placeholder="position description" name="des" pattern="[a-zA-ZšđčćžŠĐČĆŽ][a-zA-ZšđčćžŠĐČĆŽ ]{2,}" required>
+            <button type="submit" class="btn">Add</button>
+            <button type="button" class="btn cancel" onclick="closeForm()">Cancel</button>
+        </form>
     </div>
 </div>
 

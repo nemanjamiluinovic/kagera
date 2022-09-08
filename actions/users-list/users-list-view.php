@@ -2,7 +2,7 @@
 
 <div id="add">
     <button class="button" onClick="window.open('?action=users-add-form');">
-    <span class="icon">ADD NEW USER</span>
+        <span class="icon">ADD NEW USER</span>
     </button>
 </div>
 <table id="sampleTable">
