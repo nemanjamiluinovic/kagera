@@ -87,7 +87,7 @@ CREATE TABLE `user` (
   PRIMARY KEY (`user_id`) USING BTREE,
   INDEX `fk_user_position_id`(`position_id`) USING BTREE,
   INDEX `fk_user_type_id`(`type_id`) USING BTREE,
-  CONSTRAINT `fk_user_position_id` FOREIGN KEY (`position_id`) REFERENCES `positions` (`position_id`) ON DELETE RESTRICT ON UPDATE CASCADE,
+  CONSTRAINT `fk_user_position_id` FOREIGN KEY (`position_id`) REFERENCES `position` (`position_id`) ON DELETE RESTRICT ON UPDATE CASCADE,
   CONSTRAINT `fk_user_type_id` FOREIGN KEY (`type_id`) REFERENCES `type` (`type_id`) ON DELETE RESTRICT ON UPDATE CASCADE
 ) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
