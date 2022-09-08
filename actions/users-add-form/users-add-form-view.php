@@ -1,3 +1,5 @@
+<?php if (!defined('ALLOW_ENTRY')) die('Access denied!'); ?>
+
 <form action="?action=users-add" method="post" enctype="multipart/form-data" id="user">
     <label for="first_name">First name:</label><br>
     <input type="text" name="first_name" class="input_text" pattern="[a-zA-ZšđčćžŠĐČĆŽ][a-zA-ZšđčćžŠĐČĆŽ ]{2,}" required><br>

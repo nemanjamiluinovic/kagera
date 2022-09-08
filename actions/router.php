@@ -1,4 +1,6 @@
 <?php
+    if (!defined('ALLOW_ENTRY')) die('Access denied!');
+
     $action = filter_input(INPUT_GET, 'action', FILTER_SANITIZE_SPECIAL_CHARS, FILTER_FLAG_STRIP_HIGH);
 
     $action = preg_replace('/[^a-z\\-]/', '', $action); // only a-z and - is OK

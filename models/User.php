@@ -1,4 +1,5 @@
 <?php
+if (!defined('ALLOW_ENTRY')) die('Access denied!');
 class User {
     public $id;
     public $f_name;

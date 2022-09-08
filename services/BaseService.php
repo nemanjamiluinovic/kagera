@@ -1,4 +1,6 @@
 <?php
+if (!defined('ALLOW_ENTRY')) die('Access denied!');
+
 class BaseService {
     private $db;
 

@@ -1,4 +1,6 @@
 <?php
+if (!defined('ALLOW_ENTRY')) die('Access denied!');
+
 require_once 'services/BaseService.php';
 require_once 'models/User.php';
 

@@ -1,4 +1,6 @@
 <?php
+    if (!defined('ALLOW_ENTRY')) die('Access denied!');
+
 $fname = filter_input(INPUT_POST, 'first_name');
 $lname = filter_input(INPUT_POST, 'last_name');
 $position = filter_input(INPUT_POST, 'position');

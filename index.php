@@ -1,4 +1,5 @@
 <?php
+    define('ALLOW_ENTRY', TRUE);
     require_once "services/services.php";
 ?>
 <!DOCTYPE html>

@@ -1,3 +1,5 @@
+<?php if (!defined('ALLOW_ENTRY')) die('Access denied!'); ?>
+
 <div id="detail">
     <span>First name: </span> <?php echo htmlspecialchars($_POST["f_name"]); ?><br>
     <span>Last name: </span> <?php echo htmlspecialchars($_POST["l_name"]); ?><br>

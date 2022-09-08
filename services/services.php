@@ -1,4 +1,6 @@
 <?php
+if (!defined('ALLOW_ENTRY')) die('Access denied!');
+
 require_once "config.php";
 require_once "connection_to_db.php";
 

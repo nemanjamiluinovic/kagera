@@ -1,4 +1,6 @@
 <?php
+    if (!defined('ALLOW_ENTRY')) die('Access denied!');
+
     $positionName = filter_input(INPUT_POST, 'pos');
     $positionDescription = filter_input(INPUT_POST, 'des');
     $res = $positionService->add($positionName, $positionDescription, $error);
