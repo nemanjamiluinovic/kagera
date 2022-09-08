@@ -1,0 +1,2 @@
+<?php
+    $users = $userService->getAll();

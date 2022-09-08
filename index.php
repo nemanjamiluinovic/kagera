@@ -15,29 +15,6 @@
     <script type="text/javascript" src="js/fancyTable.js"></script>
 </head>
 <body>
-    <div id="add">
-        <button class="button" onClick="window.open('add_user.php');">
-        <span class="icon">ADD NEW USER</span>
-        </button>
-    </div>
-    <table id="sampleTable">
-        <thead>
-            <tr>
-                <td>First name</td>
-                <td>Last name</td>
-                <td>position</td>
-                <td>type</td>
-                <td>details</td>
-            </tr>
-        </thead>
-        <tbody>
-            <?php
-            $users = $userService->getAll();
-            foreach ($users as $u){
-                $u->print_in_table();
-            }
-            ?>
-        </tbody>
-    </table>
+    <?php require_once 'actions/router.php'; ?>
 </body>
 </html>

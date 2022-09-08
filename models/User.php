@@ -59,7 +59,7 @@ class User {
         echo htmlspecialchars($this->type);
         echo "</td>";
         echo "<td>";
-        echo "<form action='user_details.php' method='post'>";
+        echo "<form action='?action=users-details' method='post'>";
         echo "<input type='hidden' name='f_name' value='" . htmlspecialchars($this->f_name) ."'>";
         echo "<input type='hidden' name='l_name' value='" . htmlspecialchars($this->l_name) ."'>"; 
         echo "<input type='hidden' name='position' value='" . htmlspecialchars($this->position) ."'>";
