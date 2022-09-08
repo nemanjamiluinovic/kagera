@@ -1,19 +1,10 @@
 <?php
-require "connection_to_db.php";
-
-$sql = "
-INSERT INTO position (position, description)
-VALUES ('".$_POST['pos']."','".$_POST['des']."')
-";
-
-if ($mysqli->query($sql) === TRUE) {
+  require_once "services/services.php";
+  $res = $positionService->add($_POST['pos'], $_POST['des'], $error);
+  if ($res) {
     echo "New record created successfully";
   } else {
-    echo "Error: " . $sql . "<br>" . $mysqli->error;
+    echo "Error adding a new position!<br>Error: " . $error;
   }
-  
-  $mysqli->close();
 
   header('Location: add_user.php');
-
-?>

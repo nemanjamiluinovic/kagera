@@ -1,22 +1,6 @@
 <?php
-
-require "connection_to_db.php";
-
-$sql="
-SELECT
-position.position_id,
-position.position
-FROM
-position
-";
-
-
-$result = $mysqli -> query($sql);
-
-
+  require_once "services/services.php";
 ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -40,7 +24,8 @@ $result = $mysqli -> query($sql);
         <label for="position">Position:</label><br>
         <select name="position" id="selector" pattern="[a-zA-ZšđčćžŠĐČĆŽ][a-zA-ZšđčćžŠĐČĆŽ ]{2,}" required>
             <?php
-            while ($row = $result->fetch_assoc()) {
+            $positions = $positionService->getAll();
+            foreach ($positions as $row) {
                 echo "<option value='".$row['position_id']."'>".$row['position']."</option>";
             };
             ?>
