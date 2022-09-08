@@ -19,7 +19,6 @@ class UserService extends BaseService {
         user INNER JOIN position ON user.position_id = position.position_id
         INNER JOIN type ON type.type_id = user.type_id ";
 
-
         $result = $this->db()->query($sql);
 
         while ($row = $result->fetch_assoc()) {
@@ -46,24 +45,33 @@ class UserService extends BaseService {
         $img = htmlspecialchars($imgFileArray['name']);
         $cv = htmlspecialchars($cvFileArray['name']);
 
-        $sql = "
-        INSERT INTO user (first_name, last_name, position_id, gender, picture_path, cv_path)
-        VALUES ('".$fname."','".$lname."','".$pos."','".$gender."','".$img."','".$cv."')
-        ";
+        $sql = "INSERT INTO user (first_name, last_name, position_id, gender, picture_path, cv_path) VALUES (?, ?, ?, ?, ?, ?);";
+        $prep = $this->db()->prepare($sql);
+        $prep->bind_param("ssisss", $fname, $lname, $pos, $gender, $img, $cv);
+        $res = $prep->execute();
 
-        $procedure = "CALL add_new_user_to_partners('".$fname."','".$lname."')";
-
-        if ($this->db()->query($sql) === TRUE) {
-            $u = $this->db()->insert_id;
-            move_uploaded_file($imgFileArray['tmp_name'],"users/picture/$u+$img");
-            move_uploaded_file($cvFileArray['tmp_name'],"users/cv/$u+$cv");
-
-            $this->db()->query($procedure);
-
-            return true;
-        } else {
-            $error = $this->db()->error;
+        if (!$res) {
+            $error = $prep->error;
             return false;
         }
+
+        $u = $prep->insert_id;
+
+        $procedure = "CALL add_new_user_to_partners(?, ?)";
+        $prepProcedure = $this->db()->prepare($procedure);
+        $prepProcedure->bind_param("ss", $fname, $lname);
+        $resProcedure = $prepProcedure->execute();
+
+        if (!$resProcedure) {
+            $error = $prepProcedure->error;
+            return false;
+        }
+
+        move_uploaded_file($imgFileArray['tmp_name'],"users/picture/$u+$img");
+        move_uploaded_file($cvFileArray['tmp_name'],"users/cv/$u+$cv");
+
+        $this->db()->query($procedure);
+
+        return $u;
     }
 }

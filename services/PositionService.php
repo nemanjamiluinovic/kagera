@@ -26,13 +26,15 @@ class PositionService extends BaseService {
     public function add($positionName, $positionDescription, &$error) {
         $error = null;
 
-        $sql = "
-        INSERT INTO position (position, description)
-        VALUES ('".$positionName."','".$positionDescription."')
-        ";
+        $sql = "INSERT INTO position (position, description) VALUES (?, ?)";
 
-        if ($this->db()->query($sql) === TRUE) {
-            return true;
+        $prep = $this->db()->prepare($sql);
+        $prep->bind_param("ss", $positionName, $positionDescription);
+
+        $res = $prep->execute();
+
+        if ($res) {
+            return $prep->insert_id;
         } else {
             $error = $this->db()->error;
             return false;
