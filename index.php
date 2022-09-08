@@ -95,17 +95,17 @@ $users = array();
 require "connection_to_db.php";
 
 $sql = "SELECT
-users.user_id,
-users.first_name,
-users.last_name,
-positions.position,
+user.user_id,
+user.first_name,
+user.last_name,
+position.position,
 type.user_type,
-users.gender,
-users.picture,
-users.cv
+user.gender,
+user.picture_path,
+user.cv_path
 FROM
-users INNER JOIN positions ON users.position_id = positions.position_id
-INNER JOIN type ON type.type_id = users.type_id ";
+user INNER JOIN position ON user.position_id = position.position_id
+INNER JOIN type ON type.type_id = user.type_id ";
 
 
 $result = $mysqli -> query($sql);
@@ -114,7 +114,7 @@ $result = $mysqli -> query($sql);
 
 
 while ($row = $result->fetch_assoc()) {
-    $u = new User($row['user_id'],$row['first_name'],$row['last_name'],$row['position'],$row['user_type'],$row['gender'],$row['picture'],$row['cv']);
+    $u = new User($row['user_id'],$row['first_name'],$row['last_name'],$row['position'],$row['user_type'],$row['gender'],$row['picture_path'],$row['cv_path']);
     array_push($users,$u);
 
 }

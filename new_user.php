@@ -8,7 +8,7 @@ $img = $_FILES['picture']['name'];
 $cv = $_FILES['cv']['name'];
 
 $sql = "
-INSERT INTO users (first_name, last_name, position_id, gender, picture, cv)
+INSERT INTO user (first_name, last_name, position_id, gender, picture_path, cv_path)
 VALUES ('".$_POST['first_name']."','".$_POST['last_name']."','".$_POST['position']."','".$_POST['gender']."','".$img."','".$cv."')
 ";
 
@@ -19,7 +19,7 @@ $procedure = "CALL add_new_user_to_partners('".$_POST['first_name']."','".$_POST
 if ($mysqli->query($sql) === TRUE) {
     echo "New record created successfully";
 
-    $result = $mysqli->query("SELECT MAX(users.user_id) AS last_user FROM users");
+    $result = $mysqli->query("SELECT MAX(user.user_id) AS last_user FROM user");
     $row = $result->fetch_assoc();
     $u = $row['last_user'];
     move_uploaded_file($_FILES['picture']['tmp_name'],"users/picture/$u+$img");

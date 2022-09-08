@@ -2,7 +2,7 @@
 require "connection_to_db.php";
 
 $sql = "
-INSERT INTO positions (position, description)
+INSERT INTO position (position, description)
 VALUES ('".$_POST['pos']."','".$_POST['des']."')
 ";
 

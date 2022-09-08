@@ -4,10 +4,10 @@ require "connection_to_db.php";
 
 $sql="
 SELECT
-positions.position_id,
-positions.position
+position.position_id,
+position.position
 FROM
-positions
+position
 ";
 
 
